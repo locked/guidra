@@ -8,5 +8,5 @@ jobs:
     machine: true
     steps:
       - checkout
-      - sudo apt-get update; sudo apt-get install phpunit
+      - run: sudo apt-get update; sudo apt-get install phpunit
       - run: phpunit
