@@ -3,18 +3,10 @@
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
 version: 2
-dependencies:
-  pre:
-    - sudo apt-get update; sudo apt-get install phpunit
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/php:7.2-apache-node-browsers
-      - image: circleci/mysql:5.5
-
-    working_directory: ~/repo
-
+    machine: true
     steps:
       - checkout
+      - sudo apt-get update; sudo apt-get install phpunit
       - run: phpunit
